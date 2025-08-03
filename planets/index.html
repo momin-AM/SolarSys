@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Planets Index • Solar Web System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Browse all planets and key objects in our solar system — quick facts and deep links to each planet’s page." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e7faff;
+      background: linear-gradient(135deg, #1c2540 0%, #23253a 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(90deg, #23253a 0%, #0e1743 100%);
+      padding: 1.5rem 2vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      box-shadow: 0 2px 18px #00081890;
+    }
+    header h1 {
+      font-weight: 900;
+      font-size: 1.8rem;
+      margin: 0;
+      color: #9ffff0;
+      letter-spacing: 0.05em;
+      text-shadow: 0 2px 8px #162447b3;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0; padding: 0;
+    }
+    nav li { font-weight: 700; }
+    nav a {
+      color: #7fd8f2;
+      padding: 0.35rem 1rem;
+      border-radius: 7px;
+      text-decoration: none;
+      box-shadow: 0 1px 6px #284f561e;
+      transition: background 0.25s, color 0.22s;
+    }
+    nav a:hover, nav a:focus, nav a[aria-current] {
+      background: #315b97;
+      color: #fff;
+    }
+    main {
+      flex: 1;
+      max-width: 1020px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1rem;
+    }
+    h2 {
+      font-size: 2.25rem;
+      color: #81d4fa;
+      text-align: center;
+      margin-bottom: 2.2rem;
+      text-shadow: 0 2px 11px #1e496077;
+    }
+    .planet-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(225px,1fr));
+      gap: 2.2rem;
+      padding: 0;
+      margin: 0 auto 2.3rem auto;
+      max-width: 900px;
+      list-style: none;
+      justify-items: center;
+    }
+    .planet-card {
+      background: linear-gradient(135deg, rgba(47,100,135,0.55) 60%, rgba(25,18,58,0.22));
+      border-radius: 17px;
+      box-shadow: 0 2px 22px #1491d926;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1.05rem 1.2rem;
+      text-align: center;
+      transition: box-shadow 0.23s, transform 0.22s, background 0.21s;
+      min-width: 183px;
+    }
+    .planet-card:hover, .planet-card:focus-within {
+      box-shadow: 0 8px 32px #0df0ff78;
+      background: linear-gradient(135deg, #01274c46 50%, #3ae5f71c 100%);
+      transform: translateY(-8px) scale(1.04);
+    }
+    .planet-card img {
+      width: 74px; height: 74px;
+      border-radius: 50%;
+      margin-bottom: .7rem;
+      box-shadow: 0 2px 14px #66eaf7bb;
+      object-fit: cover;
+      border: 2px solid #1bfcf2ad;
+      background: #193259;
+    }
+    .planet-card .planet-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #93e5ff;
+      margin-bottom: .35em;
+    }
+    .planet-card .fact {
+      font-size: 0.98rem;
+      color: #c4f1fb;
+      margin-bottom: 0.6em;
+    }
+    .planet-card a {
+      display: inline-block;
+      margin-top: .38rem;
+      background: linear-gradient(90deg, #52e8ff 0%, #218bb7 100%);
+      color: #012430;
+      font-weight: 700;
+      padding: 0.41rem 1.09rem;
+      border-radius: 9px;
+      text-decoration: none;
+      font-size: 1.02rem;
+      box-shadow: 0 2px 9px #13c5d866;
+      transition: background 0.19s, color 0.13s;
+    }
+    .planet-card a:hover, .planet-card a:focus {
+      background: linear-gradient(90deg, #93f7ff, #28b9ef);
+      color: #032836;
+    }
+    @media (max-width:620px){
+      .planet-list { grid-template-columns: 1fr; gap: 1.15rem;}
+      h2 { font-size: 1.65rem;}
+    }
+    footer {
+      background: #23253a;
+      color: #89b9f1d9;
+      font-size: 0.98rem;
+      text-align: center;
+      padding: 1.2rem 1rem;
+      border-top: 1px solid #263c6642;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Solar Web System</h1>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../solar.html">Solar System</a></li>
+      <li><a href="index.html" aria-current="page">Planets Index</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h2>Planets of Our Solar System</h2>
+  <ul class="planet-list">
+    <li class="planet-card">
+      <img src="../assets/mercury.jpg" alt="Mercury planet photo" />
+      <div class="planet-name">Mercury</div>
+      <div class="fact">Smallest, closest planet to the Sun</div>
+      <a href="mercury.html" aria-label="Learn about Mercury">Explore &rarr;</a>
+    </li>
+    <li class="planet-card">
+      <img src="../assets/venus.jpg" alt="Venus planet photo" />
+      <div class="planet-name">Venus</div>
+      <div class="fact">Earth’s “twin,” the hottest planet</div>
+      <a href="venus.html" aria-label="Learn about Venus">Explore &rarr;</a>
+    </li>
+    <li class="planet-card">
+      <img src="../assets/earth.jpg" alt="Earth planet photo" />
+      <div class="planet-name">Earth</div>
+      <div class="fact">Our home, only known world with life</div>
+      <a href="earth.html" aria-label="Learn about Earth">Explore &rarr;</a>
+    </li>
+    <li class="planet-card">
+      <img src="../assets/mars.jpg" alt="Mars planet photo" />
+      <div class="planet-name">Mars</div>
+      <div class="fact">Red planet, ancient water & volcanoes</div>
+      <a href="mars.html" aria-label="Learn about Mars">Explore &rarr;</a>
+    </li>
+    <li class="planet-card">
+      <img src="../assets/jupiter.jpg" alt="Jupiter planet photo" />
+      <div class="planet-name">Jupiter</div>
+      <div class="fact">Largest, gas giant, Great Red Spot</div>
+      <a href="jupiter.html" aria-label="Learn about Jupiter">Explore &rarr;</a>
+    </li>
+    <li class="planet-card">
+      <img src="../assets/saturn.jpg" alt="Saturn planet photo" />
+      <div class="planet-name">Saturn</div>
+      <div class="fact">Known for its beautiful rings</div>
+      <a href="saturn.html" aria-label="Learn about Saturn">Explore &rarr;</a>
+    </li>
+    <li class="planet-card">
+      <img src="../assets/uranus.jpg" alt="Uranus planet photo" />
+      <div class="planet-name">Uranus</div>
+      <div class="fact">Ice giant tilted on its side</div>
+      <a href="uranus.html" aria-label="Learn about Uranus">Explore &rarr;</a>
+    </li>
+    <li class="planet-card">
+      <img src="../assets/neptune.jpg" alt="Neptune planet photo" />
+      <div class="planet-name">Neptune</div>
+      <div class="fact">Farthest planet, fierce blue storms</div>
+      <a href="neptune.html" aria-label="Learn about Neptune">Explore &rarr;</a>
+    </li>
+    <li class="planet-card">
+      <img src="../assets/pluto.jpg" alt="Pluto planet photo" />
+      <div class="planet-name">Pluto</div>
+      <div class="fact">Dwarf, icy world at the edge</div>
+      <a href="pluto.html" aria-label="Learn about Pluto">Explore &rarr;</a>
+    </li>
+  </ul>
+</main>
+<footer>
+  &copy; 2025 Solar Web System. All Rights Reserved.
+</footer>
+</body>
+</html>

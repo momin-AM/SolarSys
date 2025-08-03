@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Earth • Solar Web System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore the facts, features, and unique science of Earth—our home planet in the Solar Web System." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #edf6fa;
+      background: linear-gradient(135deg, #140a2a 0%, #185392 30%, #1b263b 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(90deg, #23253a 0%, #336799 100%);
+      padding: 1.5rem 2vw;
+      box-shadow: 0 2px 18px #191a2e80;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    header h1 {
+      font-weight: 900;
+      font-size: 1.8rem;
+      margin: 0;
+      color: #b6f6ff;
+      letter-spacing: 0.06em;
+      text-shadow: 0 2px 8px #162447b3;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      font-weight: 700;
+    }
+    nav a {
+      color: #6dccff;
+      padding: 0.35rem 1rem;
+      border-radius: 7px;
+      text-decoration: none;
+      box-shadow: 0 1px 6px #232f3e1e;
+      transition: background 0.25s, color 0.22s;
+    }
+    nav a:hover, nav a:focus, nav a[aria-current] {
+      background: #40527c;
+      color: #fff;
+    }
+    main {
+      flex: 1;
+      max-width: 980px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .planet-hero {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      background: linear-gradient(120deg, rgba(48,106,160,0.6), rgba(60,162,206,0.14));
+      border-radius: 20px;
+      box-shadow: 0 6px 36px #20299738;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+      animation: fadein 1.1s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(30px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    .planet-hero img {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      box-shadow: 0 2px 34px #53ecffc4, 0 1.5px 10px #193b516a;
+      background: #1c2349 linear-gradient(135deg, #8ed7ff 0 40%, #4ea3c3 100%);
+      object-fit: cover;
+      border: 3px solid #9ef6ff69;
+      transition: transform 0.24s cubic-bezier(.6,-0.28,.74,.05);
+    }
+    .planet-hero img:hover {
+      transform: scale(1.09) rotate(-3deg);
+      box-shadow: 0 6px 50px #86f6ffd7, 0 4px 40px #3dd0ffe7;
+    }
+    .planet-hero h2 {
+      font-size: 2.35rem;
+      font-weight: 900;
+      color: #86eaff;
+      margin: 0 0 .6rem 0;
+      letter-spacing: .02em;
+      text-shadow: 0 2px 11px #276c86a7;
+    }
+    .planet-hero p {
+      margin: 0 0 .2rem 0;
+      font-size: 1.19rem;
+      color: #effcff;
+      text-shadow: 0 2px 10px #187d9d33;
+    }
+    .planet-facts {
+      background: linear-gradient(120deg, #13463aee 80%, #45bad9 100%);
+      box-shadow: 0 2px 22px #278f99cc;
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      max-width: 560px;
+      margin-bottom: 2rem;
+      list-style: none;
+      font-size: 1.11rem;
+      color: #d5fcff;
+      border-left: 4px solid #6fecff;
+      animation: fadein 0.9s 100ms backwards;
+    }
+    .planet-facts li {
+      font-size: 1.09rem;
+      margin-bottom: .75em;
+      position: relative;
+      padding-left: 1.1em;
+    }
+    .planet-facts li:before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: #80faff;
+      opacity: 0.7;
+      font-size: 1.12em;
+    }
+    h3 {
+      font-size: 1.28rem;
+      color: #2df6ff;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.06em;
+      text-shadow: 0 2px 8px #a0faed20;
+    }
+    .planet-navigation {
+      margin: 2rem 0 0 0;
+      display: flex;
+      gap: 1.3rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .planet-navigation a {
+      background: linear-gradient(90deg, #007aaf 0%, #79f2f7 100%);
+      color: #014356;
+      font-weight: bold;
+      padding: 0.6rem 1.5rem;
+      font-size: 1.03rem;
+      border-radius: 11px;
+      box-shadow: 0 2px 12px #53b3c23a;
+      transition: background 0.21s, box-shadow 0.16s;
+      text-decoration: none;
+    }
+    .planet-navigation a:hover, .planet-navigation a:focus {
+      background: linear-gradient(90deg, #66ebf6, #377fd6);
+      color: #fffbe4;
+      box-shadow: 0 3px 22px #2df6ff44;
+    }
+    footer {
+      background: #23253a;
+      color: #94b9d6d9;
+      font-size: 0.98rem;
+      text-align: center;
+      padding: 1.2rem 1rem;
+      border-top: 1px solid #20265a42;
+    }
+    @media(max-width:800px){
+      .planet-hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.3rem 0.5rem;
+        gap: 1.1rem;
+      }
+      main { padding: 0 0.5rem;}
+    }
+    @media(max-width:500px){
+      header {
+        flex-direction: column;
+        gap: 8px;
+      }
+      nav ul {
+        flex-direction: column; gap: 0.7rem; align-items: center;
+      }
+      .planet-facts { padding: 1rem 0.6rem;}
+      .planet-hero img { width:120px; height:120px;}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Solar Web System</h1>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../solar.html">Solar System</a></li>
+      <li><a href="../planets/">Planets</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="planet-hero">
+    <img src="../assets/earth.jpg" alt="Earth planet photo" />
+    <div>
+      <h2>Earth</h2>
+      <p>
+        Earth is the third planet from the Sun, and the only one known to support life.
+        Abundant water, a protective atmosphere, and a magnetic field make Earth unique in the Solar System.
+      </p>
+    </div>
+  </div>
+  <ul class="planet-facts">
+    <li><strong>Distance from Sun:</strong> ~150 million km</li>
+    <li><strong>Diameter:</strong> 12,742 km</li>
+    <li><strong>Orbital period:</strong> 365.25 days</li>
+    <li><strong>Mean surface temperature:</strong> ~15°C</li>
+    <li><strong>Moons:</strong> 1 (Moon, "Luna")</li>
+    <li><strong>Key feature:</strong> Only planet with liquid water and life</li>
+  </ul>
+  <h3>Quick Facts</h3>
+  <p>
+    Earth's atmosphere is about 78% nitrogen and 21% oxygen. 
+    The Moon stabilizes Earth's tilt, influencing tides and seasons. 
+    Home to 8 million+ known species, it's the only confirmed world with a biosphere.
+  </p>
+  <div class="planet-navigation">
+    <a href="mars.html">Next: Mars &rarr;</a>
+    <a href="../solar.html">&larr; Back to Solar System</a>
+    <a href="index.html">Planets Index</a>
+    <a href="venus.html">&larr; Venus</a>
+  </div>
+</main>
+<footer>
+  &copy; 2025 Solar Web System. All Rights Reserved.
+</footer>
+</body>
+</html>

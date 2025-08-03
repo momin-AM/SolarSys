@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Uranus • Solar Web System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Discover facts, features, and science about Uranus—the blue-green ice giant and its unique tilt—in the Solar Web System." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e6fbff;
+      background: linear-gradient(135deg, #10363d 0%, #6ec6e9 40%, #1b263b 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(90deg, #173c47 0%, #61cfff 100%);
+      padding: 1.5rem 2vw;
+      box-shadow: 0 2px 18px #0c7eaf70;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    header h1 {
+      font-weight: 900;
+      font-size: 1.8rem;
+      margin: 0;
+      color: #b6f6ff;
+      letter-spacing: 0.06em;
+      text-shadow: 0 2px 8px #319eabc7;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      font-weight: 700;
+    }
+    nav a {
+      color: #9deeff;
+      padding: 0.35rem 1rem;
+      border-radius: 7px;
+      text-decoration: none;
+      box-shadow: 0 1px 6px #258cff1e;
+      transition: background 0.25s, color 0.22s;
+    }
+    nav a:hover, nav a:focus, nav a[aria-current] {
+      background: #5bafc6;
+      color: #fff;
+    }
+    main {
+      flex: 1;
+      max-width: 980px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .planet-hero {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      background: linear-gradient(120deg, rgba(67,214,235,0.59), rgba(34,143,173,0.14));
+      border-radius: 20px;
+      box-shadow: 0 6px 36px #076b9d44;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+      animation: fadein 1.1s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(30px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    .planet-hero img {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      box-shadow: 0 2px 34px #1e92e7c4, 0 1.5px 10px #1960705a;
+      background: #1c3d48 linear-gradient(135deg, #86e8ff 0 40%, #48aec8 100%);
+      object-fit: cover;
+      border: 3px solid #c1fbff8e;
+      transition: transform 0.24s cubic-bezier(.6,-0.28,.74,.05);
+    }
+    .planet-hero img:hover {
+      transform: scale(1.09) rotate(-3deg);
+      box-shadow: 0 6px 50px #7cf1ffa0, 0 4px 40px #6fd8e6a2;
+    }
+    .planet-hero h2 {
+      font-size: 2.35rem;
+      font-weight: 900;
+      color: #74eaff;
+      margin: 0 0 .6rem 0;
+      letter-spacing: .02em;
+      text-shadow: 0 2px 11px #39b7e6ae;
+    }
+    .planet-hero p {
+      margin: 0 0 .2rem 0;
+      font-size: 1.19rem;
+      color: #eafcff;
+      text-shadow: 0 2px 10px #22657933;
+    }
+    .planet-facts {
+      background: linear-gradient(120deg, #25badaee 80%, #3bb0bb 100%);
+      box-shadow: 0 2px 22px #23a4c5cc;
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      max-width: 560px;
+      margin-bottom: 2rem;
+      list-style: none;
+      font-size: 1.11rem;
+      color: #cbf7ff;
+      border-left: 4px solid #7af6ff;
+      animation: fadein 0.9s 100ms backwards;
+    }
+    .planet-facts li {
+      font-size: 1.09rem;
+      margin-bottom: .75em;
+      position: relative;
+      padding-left: 1.1em;
+    }
+    .planet-facts li:before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: #c8ebfa;
+      opacity: 0.65;
+      font-size: 1.12em;
+    }
+    h3 {
+      font-size: 1.28rem;
+      color: #40e2ff;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.06em;
+      text-shadow: 0 2px 8px #7ad0eed0;
+    }
+    .planet-navigation {
+      margin: 2rem 0 0 0;
+      display: flex;
+      gap: 1.3rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .planet-navigation a {
+      background: linear-gradient(90deg, #1683aa 0%, #81f7fc 100%);
+      color: #033d51;
+      font-weight: bold;
+      padding: 0.6rem 1.5rem;
+      font-size: 1.03rem;
+      border-radius: 11px;
+      box-shadow: 0 2px 12px #19abd1b1;
+      transition: background 0.21s, box-shadow 0.16s;
+      text-decoration: none;
+    }
+    .planet-navigation a:hover, .planet-navigation a:focus {
+      background: linear-gradient(90deg, #a3f5fa, #337fd6);
+      color: #fffbe4;
+      box-shadow: 0 3px 22px #abf6ff44;
+    }
+    footer {
+      background: #173c47;
+      color: #8fd5f8d9;
+      font-size: 0.98rem;
+      text-align: center;
+      padding: 1.2rem 1rem;
+      border-top: 1px solid #15b3e895;
+    }
+    @media(max-width:800px){
+      .planet-hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.3rem 0.5rem;
+        gap: 1.1rem;
+      }
+      main { padding: 0 0.5rem;}
+    }
+    @media(max-width:500px){
+      header {
+        flex-direction: column;
+        gap: 8px;
+      }
+      nav ul {
+        flex-direction: column; gap: 0.7rem; align-items: center;
+      }
+      .planet-facts { padding: 1rem 0.6rem;}
+      .planet-hero img { width:120px; height:120px;}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Solar Web System</h1>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../solar.html">Solar System</a></li>
+      <li><a href="../planets/">Planets</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="planet-hero">
+    <img src="../assets/uranus.jpg" alt="Uranus planet photo" />
+    <div>
+      <h2>Uranus</h2>
+      <p>
+        Uranus is an ice giant with a striking blue-green color, thanks to methane in its upper atmosphere. It’s unique for rotating almost completely on its side, with its poles pointing nearly at the Sun.
+      </p>
+    </div>
+  </div>
+  <ul class="planet-facts">
+    <li><strong>Distance from Sun:</strong> ~2.87 billion km</li>
+    <li><strong>Diameter:</strong> 50,724 km</li>
+    <li><strong>Orbital period:</strong> 84 Earth years</li>
+    <li><strong>Mean cloud top temperature:</strong> -224°C (coldest planet!)</li>
+    <li><strong>Moons:</strong> 27 (biggest: Titania, Oberon)</li>
+    <li><strong>Key Feature:</strong> Axis tilted 98°, rolls like a barrel around the Sun</li>
+  </ul>
+  <h3>Quick Facts</h3>
+  <p>
+    Uranus’ unusual tilt is thought to be caused by a massive collision long ago.  
+    Its faint rings and icy moons make it a target for future robotic exploration.
+  </p>
+  <div class="planet-navigation">
+    <a href="neptune.html">Next: Neptune &rarr;</a>
+    <a href="../solar.html">&larr; Back to Solar System</a>
+    <a href="index.html">Planets Index</a>
+    <a href="saturn.html">&larr; Saturn</a>
+  </div>
+</main>
+<footer>
+  &copy; 2025 Solar Web System. All Rights Reserved.
+</footer>
+</body>
+</html>

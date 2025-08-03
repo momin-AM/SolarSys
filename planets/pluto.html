@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pluto • Solar Web System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Discover facts, features, and science about Pluto—the dwarf planet at the edge of our Solar System." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f2ecfa;
+      background: linear-gradient(135deg, #382f34 0%, #a49493 40%, #1b263b 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(90deg, #36323b 0%, #c2b6bf 100%);
+      padding: 1.5rem 2vw;
+      box-shadow: 0 2px 18px #25172b80;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    header h1 {
+      font-weight: 900;
+      font-size: 1.8rem;
+      margin: 0;
+      color: #eed4f4;
+      letter-spacing: 0.06em;
+      text-shadow: 0 2px 8px #9573acb3;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      font-weight: 700;
+    }
+    nav a {
+      color: #c2b6e4;
+      padding: 0.35rem 1rem;
+      border-radius: 7px;
+      text-decoration: none;
+      box-shadow: 0 1px 6px #815db01e;
+      transition: background 0.25s, color 0.22s;
+    }
+    nav a:hover, nav a:focus, nav a[aria-current] {
+      background: #e7def2;
+      color: #3b2642;
+    }
+    main {
+      flex: 1;
+      max-width: 980px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .planet-hero {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      background: linear-gradient(120deg, rgba(186,173,181,0.39), rgba(95,89,109,0.11));
+      border-radius: 20px;
+      box-shadow: 0 6px 36px #684e7940;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+      animation: fadein 1.1s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(30px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    .planet-hero img {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      box-shadow: 0 2px 34px #c9cad499, 0 1.5px 10px #9892a55a;
+      background: #dad1dc linear-gradient(135deg, #fdf6f3 0 40%, #ccb8c0 100%);
+      object-fit: cover;
+      border: 3px solid #ead6ee85;
+      transition: transform 0.24s cubic-bezier(.6,-0.28,.74,.05);
+    }
+    .planet-hero img:hover {
+      transform: scale(1.09) rotate(-3deg);
+      box-shadow: 0 6px 50px #eadef4d7, 0 4px 40px #d6c2d3ad;
+    }
+    .planet-hero h2 {
+      font-size: 2.35rem;
+      font-weight: 900;
+      color: #eed4f4;
+      margin: 0 0 .6rem 0;
+      letter-spacing: .02em;
+      text-shadow: 0 2px 11px #ad98bfa7;
+    }
+    .planet-hero p {
+      margin: 0 0 .2rem 0;
+      font-size: 1.18rem;
+      color: #f7eeff;
+      text-shadow: 0 2px 10px #5f3a8344;
+    }
+    .planet-facts {
+      background: linear-gradient(120deg, #ccbfd2ee 80%, #b697b5 100%);
+      box-shadow: 0 2px 22px #b897cfb1;
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      max-width: 560px;
+      margin-bottom: 2rem;
+      list-style: none;
+      font-size: 1.11rem;
+      color: #7a6189;
+      border-left: 4px solid #efcffa;
+      animation: fadein 0.9s 100ms backwards;
+    }
+    .planet-facts li {
+      font-size: 1.09rem;
+      margin-bottom: .75em;
+      position: relative;
+      padding-left: 1.1em;
+    }
+    .planet-facts li:before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: #dec4f6;
+      opacity: 0.64;
+      font-size: 1.12em;
+    }
+    h3 {
+      font-size: 1.28rem;
+      color: #e7c2f9;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.06em;
+      text-shadow: 0 2px 8px #bf9af620;
+    }
+    .planet-navigation {
+      margin: 2rem 0 0 0;
+      display: flex;
+      gap: 1.3rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .planet-navigation a {
+      background: linear-gradient(90deg, #997ebc 0%, #efdbff 100%);
+      color: #443858;
+      font-weight: bold;
+      padding: 0.6rem 1.5rem;
+      font-size: 1.03rem;
+      border-radius: 11px;
+      box-shadow: 0 2px 12px #7e5d9c78;
+      transition: background 0.21s, box-shadow 0.16s;
+      text-decoration: none;
+    }
+    .planet-navigation a:hover, .planet-navigation a:focus {
+      background: linear-gradient(90deg, #fbe8ff 70%, #b299da);
+      color: #3f3062;
+      box-shadow: 0 3px 22px #e5ccfc55;
+    }
+    footer {
+      background: #36323b;
+      color: #dacdec;
+      font-size: 0.98rem;
+      text-align: center;
+      padding: 1.2rem 1rem;
+      border-top: 1px solid #a798e142;
+    }
+    @media(max-width:800px){
+      .planet-hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.3rem 0.5rem;
+        gap: 1.1rem;
+      }
+      main { padding: 0 0.5rem;}
+    }
+    @media(max-width:500px){
+      header {
+        flex-direction: column;
+        gap: 8px;
+      }
+      nav ul {
+        flex-direction: column; gap: 0.7rem; align-items: center;
+      }
+      .planet-facts { padding: 1rem 0.6rem;}
+      .planet-hero img { width:120px; height:120px;}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Solar Web System</h1>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../solar.html">Solar System</a></li>
+      <li><a href="../planets/">Planets</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="planet-hero">
+    <img src="../assets/pluto.jpg" alt="Pluto planet photo" />
+    <div>
+      <h2>Pluto</h2>
+      <p>
+        Once the ninth planet, Pluto is now classified as a “dwarf planet,” orbiting in the dim outer reaches of the solar system. Despite its small size, Pluto has mountains, glaciers, and a surprisingly diverse geology.
+      </p>
+    </div>
+  </div>
+  <ul class="planet-facts">
+    <li><strong>Distance from Sun:</strong> ~5.9 billion km</li>
+    <li><strong>Diameter:</strong> 2,377 km</li>
+    <li><strong>Orbital period:</strong> 248 Earth years</li>
+    <li><strong>Mean surface temperature:</strong> -229°C</li>
+    <li><strong>Moons:</strong> 5 (largest: Charon)</li>
+    <li><strong>Key Feature:</strong> Highly elliptical orbit and “heart”-shaped glacier (Tombaugh Regio)</li>
+  </ul>
+  <h3>Quick Facts</h3>
+  <p>
+    Pluto's orbit sometimes brings it closer to the Sun than Neptune’s.
+    NASA’s New Horizons spacecraft flew by Pluto in 2015, revealing complex terrain, ice mountains, and possible subsurface ocean.  
+    Pluto’s status as a planet is still debated!
+  </p>
+  <div class="planet-navigation">
+    <a href="index.html">Planets Index</a>
+    <a href="neptune.html">&larr; Neptune</a>
+    <a href="../solar.html">&larr; Back to Solar System</a>
+  </div>
+</main>
+<footer>
+  &copy; 2025 Solar Web System. All Rights Reserved.
+</footer>
+</body>
+</html>
